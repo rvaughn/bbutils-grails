@@ -7,7 +7,9 @@ import grails.transaction.Transactional
 class RepositoryController {
 
   def index() {
-    respond Repository.list(), model:[repositoryCount: Repository.count()]
+    def sort = params['sort']
+    def order = params['order']
+    respond Repository.list(sort: sort, order: order), model:[repositoryCount: Repository.count()]
   }
 
   def show(Repository repository) {
