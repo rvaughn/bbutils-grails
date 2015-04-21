@@ -29,13 +29,13 @@
             <table>
               <thead>
                 <tr>
-                  <th class="sortable"><g:link params="[sort: 'name', order: 'asc']">Name</g:link></th>
-                  <th class="sortable"><g:link params="[sort: 'lastUpdated', order: 'asc']">Last Updated</g:link></th>
+                  <g:sortableColumn property="name" title="Name"/>
+                  <g:sortableColumn property="lastUpdated" title="Last Updated"/>
                 </tr>
               </thead>
               <tbody>
-                <g:each in="${repositoryList}" var="repo">
-                  <tr>
+                <g:each in="${repositoryList}" var="repo" status="i">
+                  <tr class="${i % 2 == 0 ? 'even' : 'odd'}">
                     <td><g:link action="show" id="${repo.id}">${repo.name}</g:link></td>
                     <td>${repo.lastUpdated}</td>
                   </tr>
