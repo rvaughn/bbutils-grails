@@ -44,6 +44,13 @@ class BootStrap {
       repo2.save()
       rrr.save()
       rgw.save()
+
+      sam.save()
+      jane.save()
+      john.save()
+
+      devs.save()
+      admins.save()
     }
   }
   

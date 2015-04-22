@@ -18,7 +18,7 @@
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}">BBUtils</a></li>
                 <li><g:link controller="repository">Repositories</g:link></li>
-                <li><g:link controller="group">Groups</g:link></li>
+                <li><g:link controller="memberGroup">Groups</g:link></li>
                 <li><g:link controller="member">Members</g:link></li>
             </ul>
         </div>
