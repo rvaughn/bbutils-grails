@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="layout" content="main">
-    <g:set var="entityName" value="${message(code: 'memberGroup.label', default: 'MemberGroup')}" />
+    <g:set var="entityName" value="${message(code: 'memberGroup.label', default: 'Group')}" />
     <title><g:message code="default.show.label" args="[entityName]" /></title>
   </head>
   <body>
