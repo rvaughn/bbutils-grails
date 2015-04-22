@@ -33,9 +33,9 @@ class BootStrap {
         dateCreated: dates.parse("2015-01-12"),
         lastUpdated: dates.parse("2015-03-21"))
       
-      def sam = new Member(name: "Sam Smith", username: "sam.smith")
-      def jane = new Member(name: "Jane Doe", username: "jane.doe")
-      def john = new Member(name: "John Doe", username: "john.doe")
+      def sam = new Member(name: "Sam Smith", username: "samsmith")
+      def jane = new Member(name: "Jane Doe", username: "janedoe")
+      def john = new Member(name: "John Doe", username: "johndoe")
 
       def devs = new MemberGroup(name: "Developers", slug: "developers")
       def admins = new MemberGroup(name: "Admins", slug: "admins")

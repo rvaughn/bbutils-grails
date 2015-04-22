@@ -47,7 +47,7 @@
             <tbody>
               <g:each in="${repository.members}" var="perm" status="i">
                 <tr class="${i % 2 == 0 ? 'even' : 'odd'}">
-                  <td><g:link controller="member" action="show" id="${perm.member.id}">${perm.member.name}</g:link></td>
+                  <td><g:link controller="member" action="show" id="${perm.member.key}">${perm.member.name}</g:link></td>
                   <td>${perm.permission}</td>
                 </tr>
               </g:each>
@@ -67,7 +67,7 @@
             <tbody>
               <g:each in="${repository.groups}" var="perm" status="i">
                 <tr class="${i % 2 == 0 ? 'even' : 'odd'}">
-                  <td><g:link controller="memberGroup" action="show" id="${perm.group.id}">${perm.group.name}</g:link></td>
+                  <td><g:link controller="memberGroup" action="show" id="${perm.group.key}">${perm.group.name}</g:link></td>
                   <td>${perm.permission}</td>
                 </tr>
               </g:each>

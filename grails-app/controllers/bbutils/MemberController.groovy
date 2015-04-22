@@ -6,21 +6,27 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class MemberController {
 
-    def index() {
-        respond Member.list(params), model:[memberCount: Member.count()]
-    }
+  def index() {
+    respond Member.list(params), model:[memberCount: Member.count()]
+  }
 
-    def show(Member member) {
-        respond member
+  def show() {
+    def member = Member.findByKey(params.id)
+    if (member) {
+      respond member
+    } else {
+      flash.message = "Member ${params.id} not found."
+      redirect(action: 'index')
     }
+  }
 
-    protected void notFound() {
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'member.label', default: 'Member'), params.id])
-                redirect action: "index", method: "GET"
-            }
-            '*'{ render status: NOT_FOUND }
-        }
+  protected void notFound() {
+    request.withFormat {
+      form multipartForm {
+        flash.message = message(code: 'default.not.found.message', args: [message(code: 'member.label', default: 'Member'), params.id])
+        redirect action: "index", method: "GET"
+      }
+      '*'{ render status: NOT_FOUND }
     }
+  }
 }

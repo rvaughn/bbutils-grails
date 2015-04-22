@@ -22,7 +22,7 @@
         <tbody>
           <g:each in="${repositoryList}" var="repo" status="i">
             <tr class="${i % 2 == 0 ? 'even' : 'odd'}">
-              <td><g:link action="show" id="${repo.id}">${repo.name}</g:link></td>
+              <td><g:link action="show" id="${repo.key}">${repo.name}</g:link></td>
               <td>${repo.lastUpdated}</td>
             </tr>
           </g:each>

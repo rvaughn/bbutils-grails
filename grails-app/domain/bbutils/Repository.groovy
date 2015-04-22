@@ -22,4 +22,12 @@ class Repository {
   String getUrl() {
     "https://bitbucket.org/${owner}/${slug}"
   }
+
+  String getKey() {
+    slug
+  }
+
+  static Repository findByKey(String key) {
+    findBySlug(key)
+  }
 }

@@ -10,8 +10,14 @@ class RepositoryController {
     respond Repository.list(params), model:[repositoryCount: Repository.count()]
   }
 
-  def show(Repository repository) {
-    respond repository
+  def show() {
+    def repo = Repository.findByKey(params.id)
+    if (repo) {
+      respond repo
+    } else {
+      flash.message = "Repository ${params.id} not found."
+      redirect(action: 'index')
+    }
   }
 
   protected void notFound() {

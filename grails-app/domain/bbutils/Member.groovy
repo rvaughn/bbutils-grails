@@ -10,4 +10,12 @@ class Member {
 
   String name
   String username
+
+  String getKey() {
+    username
+  }
+
+  static Member findByKey(String key) {
+    findByUsername(key)
+  }
 }

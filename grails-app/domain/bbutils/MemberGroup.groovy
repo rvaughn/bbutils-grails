@@ -11,4 +11,12 @@ class MemberGroup {
   String name
   String slug
   String permission
+
+  String getKey() {
+    slug
+  }
+
+  static MemberGroup findByKey(String key) {
+    findBySlug(key)
+  }
 }

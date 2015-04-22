@@ -21,7 +21,7 @@
         <tbody>
           <g:each in="${memberGroupList}" var="group" status="i">
             <tr class="${i % 2 == 0 ? 'even' : 'odd'}">
-              <td><g:link action="show" id="${group.id}">${group.name}</g:link></td>
+              <td><g:link action="show" id="${group.key}">${group.name}</g:link></td>
             </tr>
           </g:each>
         </tbody>

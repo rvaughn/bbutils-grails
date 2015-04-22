@@ -1,17 +1,9 @@
 class UrlMappings {
 
   static mappings = {
-    // REST-style
     "/groups" (resources: 'memberGroup', includes: ['index', 'show'])
     "/repositories" (resources: 'repository', includes: ['index', 'show'])
     "/members" (resources: 'member', includes: ['index', 'show'])
-
-    // default
-    "/$controller/$action?/$id?(.$format)?" {
-      constraints {
-        // apply constraints here
-      }
-    }
 
     "/" (controller: 'stats')
     "500" (view:'/error')
