@@ -40,6 +40,12 @@ class BootStrap {
       def devs = new MemberGroup(name: "Developers", slug: "developers")
       def admins = new MemberGroup(name: "Admins", slug: "admins")
 
+      devs.addToMembers(sam)
+      devs.addToMembers(jane)
+      devs.addToMembers(john)
+
+      admins.addToMembers(sam)
+
       repo1.save()
       repo2.save()
       rrr.save()
@@ -51,6 +57,18 @@ class BootStrap {
 
       devs.save()
       admins.save()
+      
+      new GroupPermission(permission: "write", group: devs, repository: repo1).save()
+      new GroupPermission(permission: "write", group: devs, repository: repo2).save()
+      new GroupPermission(permission: "read", group: devs, repository: rrr).save()
+      new GroupPermission(permission: "admin", group: admins, repository: repo1).save()
+      new GroupPermission(permission: "admin", group: admins, repository: repo2).save()
+      new GroupPermission(permission: "admin", group: admins, repository: rrr).save()
+      new GroupPermission(permission: "admin", group: admins, repository: rgw).save()
+
+      new MemberPermission(permission: "read", member: jane, repository: rgw).save()
+      new MemberPermission(permission: "write", member: john, repository: rgw).save()
+      new MemberPermission(permission: "admin", member: jane, repository: rrr).save()
     }
   }
   

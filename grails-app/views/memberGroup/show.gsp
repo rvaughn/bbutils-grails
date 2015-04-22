@@ -12,6 +12,44 @@
       <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
       </g:if>
+      <g:if test="${memberGroup.members.size() > 0}">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Members</th>
+              </tr>
+            </thead>
+            <tbody>
+              <g:each in="${memberGroup.members}" var="member" status="i">
+                <tr class="${i % 2 == 0 ? 'even' : 'odd'}">
+                  <td><g:link controller="member" action="show" id="${member.id}">${member.name}</g:link></td>
+                </tr>
+              </g:each>
+            </tbody>
+          </table>
+        </div>
+      </g:if>
+      <g:if test="${memberGroup.repositories.size() > 0}">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th width="50%">Repositories</th>
+                <th width="50%">Permission</th>
+              </tr>
+            </thead>
+            <tbody>
+              <g:each in="${memberGroup.repositories}" var="perm" status="i">
+                <tr class="${i % 2 == 0 ? 'even' : 'odd'}">
+                  <td><g:link controller="repository" action="show" id="${perm.repository.id}">${perm.repository.name}</g:link></td>
+                  <td>${perm.permission}</td>
+                </tr>
+              </g:each>
+            </tbody>
+          </table>
+        </div>
+      </g:if>
     </div>
   </body>
 </html>
