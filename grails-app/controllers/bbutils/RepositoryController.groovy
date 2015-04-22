@@ -7,6 +7,12 @@ import grails.transaction.Transactional
 class RepositoryController {
 
   def index() {
+    if (params.sort != 'name' && params.sort != 'lastUpdated') {
+      params.sort = 'name'
+    }
+    if (params.order != 'asc' && params.order != 'desc') {
+      params.order = 'asc'
+    }
     respond Repository.list(params), model:[repositoryCount: Repository.count()]
   }
 

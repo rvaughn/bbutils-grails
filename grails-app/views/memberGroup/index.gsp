@@ -15,7 +15,10 @@
       <table>
         <thead>
           <tr>
+            <!-- does not work with REST resources
             <g:sortableColumn property="name" title="Name"/>
+            -->
+            <th class="sortable ${params.sort == 'name' ? params.order : ''}"><g:link resource="memberGroup" params="[sort: 'name', order: params.order == 'asc' ? 'desc' : 'asc']">Name</g:link></th>
           </tr>
         </thead>
         <tbody>

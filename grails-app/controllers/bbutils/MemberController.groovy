@@ -7,6 +7,12 @@ import grails.transaction.Transactional
 class MemberController {
 
   def index() {
+    if (params.sort != 'name' && params.sort != 'username') {
+      params.sort = 'name'
+    }
+    if (params.order != 'asc' && params.order != 'desc') {
+      params.order = 'asc'
+    }
     respond Member.list(params), model:[memberCount: Member.count()]
   }
 
