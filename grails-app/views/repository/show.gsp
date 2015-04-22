@@ -22,8 +22,7 @@
         </li>
         <li class="fieldcontain">
           <span id="name-label" class="property-label">Link</span>
-          <g:set var="link">https://bitbucket.org/${repository.owner}/${repository.slug}</g:set>
-          <span class="property-value"><a href="${link}" target="_blank">${link}</a></span>
+          <span class="property-value"><a href="${repository.url}" target="_blank">${repository.url}</a></span>
         </li>
         <li class="fieldcontain">
           <span id="name-label" class="property-label">Date Created</span>

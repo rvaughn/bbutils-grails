@@ -18,4 +18,8 @@ class Repository {
   String owner
   Date dateCreated
   Date lastUpdated
+
+  String getUrl() {
+    "https://bitbucket.org/${owner}/${slug}"
+  }
 }
