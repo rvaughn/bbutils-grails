@@ -9,14 +9,18 @@ import spock.lang.Specification
 @TestFor(Repository)
 class RepositorySpec extends Specification {
 
-    def setup() {
-    }
+  def setup() {
+  }
 
-    def cleanup() {
-    }
+  def cleanup() {
+  }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
+  void "test URL generation"() {
+    when:
+      def repo = new Repository(name: 'Repo', slug: 'bar', owner: 'foo', dateCreated: new Date(), lastUpdated: new Date())
+
+    then:
+      repo.url == "https://bitbucket.org/foo/bar"
+  }
+
 }

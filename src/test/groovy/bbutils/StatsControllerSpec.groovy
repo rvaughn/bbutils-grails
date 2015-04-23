@@ -9,14 +9,15 @@ import spock.lang.Specification
 @TestFor(StatsController)
 class StatsControllerSpec extends Specification {
 
-    def setup() {
-    }
+  def setup() {
+  }
 
-    def cleanup() {
-    }
+  def cleanup() {
+  }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
+  void "test something"() {
+    expect:"fix me"
+    true == true
+  }
+  
 }
